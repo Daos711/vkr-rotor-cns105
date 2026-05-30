@@ -1,0 +1,37 @@
+{
+  "drawing_basis": "сборочный чертёж УГНТУ; насос ЦНС 105-392 (5МС-10); подшипник стороны всасывания; чертёж колеса первой ступени ЦНС90.00.00.012",
+  "bearing_journal_diameter_mm": 90.0,
+  "bearing_radius_m": 0.045,
+  "bearing_liner_length_mm": 40.0,
+  "liner_material": "Сталь ШХ15 ГОСТ 801-78",
+  "radial_bearings_count": 2,
+  "stages": "1 колесо первой ступени по чертежу + 7 рабочих колёс позиции 11, учтённых как 6 промежуточных и одно крайнее с той же расчётной массой",
+  "thrust_unloading_support": "разгрузочное устройство учитывается как осевая разгрузка; его щелевое уплотнение добавлено как радиальная гидродинамическая связь",
+  "support_span_assumption_m": 1.951,
+  "support_span_components_m": {
+    "left_to_stage_pack": 0.36,
+    "stage_pack": 1.071,
+    "stage_pack_to_right": 0.52
+  },
+  "shaft_equivalent_diameter_m": 0.09,
+  "shaft_diameter_basis": "по сборочному чертежу явно читаются посадочные диаметры около 90-95 мм; для бакалаврской модели принят эквивалентный d=90 мм",
+  "impeller_masses_kg": {
+    "first_stage": 19.6,
+    "intermediate": 16.0,
+    "last_stage": 16.0
+  },
+  "impeller_geometry_from_drawing": {
+    "D2_m": 0.3,
+    "B2_m": 0.0224,
+    "blade_count": 7,
+    "allowable_unbalance_g_mm": 250.0
+  },
+  "static_support_reactions_n": {
+    "left": 1184.8206590181633,
+    "right": 1061.9837207813614
+  },
+  "annular_seal_model": "инженерная линеаризация эффекта Ломакина: K=lambda_L*Delta_p*D*L/c; C=beta*K/Omega",
+  "annular_seal_geometry": "Ds переднего уплотнения 0.110 м, Ds заднего 0.195 м, Ds разгрузочного 0.120 м; gamma_s=0.40/0.60/0.30; Ls=10 мм, cs=0.20 мм для нового состояния, до 0.30-0.40 мм при износе",
+  "unbalance_model": "ГОСТ ИСО 1940-1: G6,3 для нового ротора и G16 для предельно допустимого эксплуатационного варианта",
+  "hydraulic_force_model": "F_rad=K_R*rho*g*H*D2*B2; K_R=0.02 для номинального режима и K_R=0.04 для нерасчётного режима"
+}

@@ -1,0 +1,4 @@
+case,critical_rpm,mode_peak_x_m
+without_annular_seals,1629.2968543496522,0.9624375
+with_annular_seals,3701.8043784227466,0.8285625
+limit_operating_clearances,2900.0423773501475,0.8714025
