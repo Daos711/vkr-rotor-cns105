@@ -1051,8 +1051,23 @@ def make_misalignment_figures(bearing: BearingParams, rotor: RotorParams, seals:
         nodal_forces=excitation_nodal_forces(rotor, rotor.balance_grade_limit_mm_s, True, rotor.hydraulic_force_kr_offdesign),
     )
 
+    # Допустимый эксплуатационный износ: G6,3, нерасчётный режим и умеренно увеличенные зазоры.
+    mild_support_scale = support_clearance_scale(rotor.mild_bearing_clearance_multiplier)
+    mild_seal_scale = seal_clearance_scale(rotor.mild_seal_clearance_multiplier)
+    mild_left = left_support.scaled(mild_support_scale, mild_support_scale, label="left_allowable_wear")
+    mild_right = right_support.scaled(mild_support_scale, mild_support_scale, label="right_allowable_wear")
+    mild_seal_elems = seal_elements(rotor, seals, stiffness_scale=mild_seal_scale)
+    slope_mild = support_slope_response_full(
+        rotor,
+        mild_left,
+        mild_right,
+        bearing.speed_rpm,
+        seal_elems=mild_seal_elems,
+        nodal_forces=excitation_nodal_forces(rotor, rotor.balance_grade_mm_s, True, rotor.hydraulic_force_kr_offdesign),
+    )
+
     rows = []
-    for model, slopes in [("baseline_g6_3_hydraulic", slope_baseline), ("limit_g16_offdesign", slope_limit)]:
+    for model, slopes in [("baseline_g6_3_hydraulic", slope_baseline), ("allowable_wear_g6_3_offdesign", slope_mild), ("limit_g16_offdesign", slope_limit)]:
         for support, theta in [("левая опора", slopes["left_theta_amp_rad"]), ("правая опора", slopes["right_theta_amp_rad"])]:
             metrics = misalignment_clearance_metrics(bearing, theta)
             metrics.update({"model": model, "support": support})
