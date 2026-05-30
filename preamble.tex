@@ -1,0 +1,101 @@
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{tempora}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb,mathtools}
+\setlength{\mathindent}{1.25cm}
+\usepackage{listings,xcolor}
+\usepackage{hyperref}
+\usepackage{caption,subcaption}
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage{multirow,longtable,array,booktabs,tabularx}
+\usepackage{makecell}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tocloft}
+
+% --- Пути к рисункам проекта ---
+\graphicspath{{project/figures/}{figures/}{./}}
+
+% --- Нумерация страниц: внизу по центру ---
+\pagestyle{plain}
+
+% --- Оформление содержания ---
+\renewcommand{\cfttoctitlefont}{\hfill\normalsize\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill\mbox{}}
+\setlength{\cftaftertoctitleskip}{1\baselineskip}
+\renewcommand{\cftsecfont}{}
+\renewcommand{\cftsecpagefont}{}
+\renewcommand{\cftsubsecfont}{}
+\renewcommand{\cftsubsecpagefont}{}
+\renewcommand{\cftsubsubsecfont}{}
+\renewcommand{\cftsubsubsecpagefont}{}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftsecnumwidth}{1em}
+\setlength{\cftsubsecnumwidth}{1.8em}
+\setlength{\cftsubsubsecnumwidth}{2.5em}
+\setlength{\cftsecindent}{0pt}
+\setlength{\cftsubsecindent}{5mm}
+\setlength{\cftsubsubsecindent}{10mm}
+\setlength{\cftbeforesecskip}{0pt}
+\setlength{\cftbeforesubsecskip}{0pt}
+\setlength{\cftbeforesubsubsecskip}{0pt}
+\cftsetpnumwidth{0.7em}
+\cftsetrmarg{0.7em}
+\setcounter{tocdepth}{2}
+
+\geometry{left=30mm,right=10mm,top=20mm,bottom=20mm}
+\onehalfspacing
+\setlength{\parindent}{1.25cm}
+\renewcommand{\arraystretch}{1.18}
+
+% --- Заголовки нумерованных разделов: с отступом 1,25 см ---
+\titleformat{\section}{\clearpage\normalsize\bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{\parindent}{0pt}{\baselineskip}
+\titlespacing*{\subsection}{\parindent}{\baselineskip}{\baselineskip}
+\titlespacing*{\subsubsection}{\parindent}{\baselineskip}{\baselineskip}
+
+% --- Заголовки ненумерованных разделов: по центру, с новой страницы ---
+\titleformat{name=\section,numberless}{\clearpage\normalsize\bfseries\centering}{}{0em}{}
+\titlespacing*{name=\section,numberless}{0pt}{0pt}{\baselineskip}
+
+% --- Перечисления: отступ только на первой строке, тире вместо точек ---
+\setlist{nolistsep}
+\setlist[enumerate]{wide, itemindent=\parindent, listparindent=0pt}
+\setlist[itemize]{wide, itemindent=\parindent, listparindent=0pt, label=-}
+
+% --- Название библиографии ---
+\renewcommand{\refname}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}
+
+\DeclareCaptionLabelFormat{gost}{Рисунок #2}
+\DeclareCaptionLabelFormat{gosttable}{Таблица #2}
+\captionsetup[figure]{labelformat=gost,labelsep=endash,justification=centering}
+\captionsetup[table]{labelformat=gosttable,labelsep=endash,justification=justified,singlelinecheck=false}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{pythonstyle}{
+    backgroundcolor=\color{white},commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},basicstyle=\ttfamily\footnotesize,
+    breaklines=true,captionpos=b,keepspaces=true,numbers=left,
+    numbersep=5pt,showstringspaces=false,tabsize=2,language=Python,
+    frame=single}
+\lstset{style=pythonstyle}
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+\hypersetup{colorlinks=true,linkcolor=black,filecolor=black,urlcolor=blue,citecolor=black}

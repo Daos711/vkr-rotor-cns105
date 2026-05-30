@@ -1,36 +1,3 @@
-\documentclass[14pt,a4paper]{extarticle}
-\usepackage[utf8]{inputenc}
-\usepackage[T2A]{fontenc}
-\usepackage[english,russian]{babel}
-\usepackage{tempora}
-\usepackage{geometry}
-\geometry{left=30mm,right=15mm,top=20mm,bottom=20mm}
-\usepackage{setspace}
-\onehalfspacing
-\usepackage{indentfirst}
-\setlength{\parindent}{1.25cm}
-\usepackage{amsmath,amssymb}
-\usepackage{graphicx}
-\graphicspath{{./}{project/figures/}{figures/}}
-\usepackage{float}
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{tabularx}
-\usepackage{makecell}
-\usepackage{caption}
-\usepackage{hyperref}
-\hypersetup{unicode=true,colorlinks=false,pdfborder={0 0 0}}
-\captionsetup{font=small,labelfont=bf,labelsep=endash}
-\renewcommand{\arraystretch}{1.18}
-\numberwithin{equation}{section}
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
-\sloppy
-
-\begin{document}
-\setcounter{section}{1}
-
 \section{Методология численного моделирования динамики ротора}
 
 \subsection{Цель и задачи расчёта}
@@ -734,32 +701,3 @@ G16, предельные зазоры & 1{,}7 & 64{,}05 & 13{,}99 & D & сос�
 Анализ устойчивости показал, что в номинальном режиме первая ветвь имеет $\operatorname{Re}(s_1)=-46{,}70$ c$^{-1}$ и $\delta_1=0{,}757$, а минимальный декремент первых трёх ветвей равен $0{,}504$. При допустимом износе минимальный декремент снижается до $0{,}138$, но остаётся выше ориентировочного критерия $0{,}1$. В предельном варианте G16 третья ветвь имеет $\operatorname{Re}(s_3)=6{,}91$ c$^{-1}$ и $\delta_3=-0{,}053$, поэтому динамический запас считается потерянным. Нормативное сопоставление показало: новый ротор имеет запас по критической скорости $25{,}5\%$ и зону вибрации A в опорном сечении; при допустимом износе запас снижается до $8{,}4\%$ и виброскорость переходит в зону C; в предельном состоянии запас составляет только $1{,}7\%$, а виброскорость соответствует зоне D.
 
 Гидравлическая радиальная сила, рассчитанная по реальным параметрам колеса $D_2=0{,}300$ м и $B_2=0{,}0224$ м, составляет $516{,}8$ Н на номинальном режиме и $1033{,}7$ Н на нерасчётном режиме. Допустимый дисбаланс по чертежу $D_b=250$ г$\cdot$мм даёт силу $23{,}86$ Н, что совпадает по порядку с оценкой по классу G6,3. Анализ чувствительности к коэффициенту Ломакина показал изменение первой частотной ветви от $-12{,}0$ до $+10{,}6\%$ при изменении $\lambda_L$ на $\pm30\%$, поэтому результат устойчив к разумной неопределённости параметров щелевых уплотнений.
-
-\newpage
-\section*{Список использованных источников}
-\addcontentsline{toc}{section}{Список использованных источников}
-
-
-\begin{enumerate}
-    \item ТУ 3631-003-00217389-96. Насосы центробежные секционные типа ЦНС. Технические условия.
-    \item ГОСТ 31381-2009. Насосы динамические. Методы испытаний. Москва: Стандартинформ, 2010.
-    \item ГОСТ 801-78. Сталь подшипниковая. Технические условия. Москва: Издательство стандартов, 1978.
-    \item Колесо рабочее 1 ступени ЦНС 90.00.00.012. Чертёж детали, УГНТУ МП-98-02.
-    \item Mota J. A., Maldonado D. J. G., Valério J. V., Ritto T. G. Complete modeling of hydrodynamic bearings with a boundary parameterization approach // Mechanism and Machine Theory. 2021. Vol. 162. Article 104350.
-    \item Ломакин А. А. Расчёт критического числа оборотов и условий обеспечения динамической устойчивости роторов гидравлических машин высокого давления с учётом сил в уплотнениях // Энергомашиностроение. 1958. № 4. С. 1--8.
-    \item Ломакин А. А. Центробежные и осевые насосы. 2-е изд., перераб. и доп. Москва; Ленинград: Машиностроение, 1966. 364 с.
-    \item Black H. F., Jenssen D. N. Dynamic hybrid bearing characteristics of annular controlled leakage seals // Proceedings of the Institution of Mechanical Engineers. 1969. Vol. 184. P. 92--100.
-    \item Hirs G. G. A bulk-flow theory for turbulence in lubricant films // Journal of Lubrication Technology. 1973. Vol. 95, no. 2. P. 137--146.
-    \item Childs D. W. Turbomachinery Rotordynamics: Phenomena, Modeling, and Analysis. New York: Wiley, 1993.
-    \item San Andrés L. Analysis of turbulent annular seals with fluid inertia effects // ASME Journal of Tribology. 1991. Vol. 113. P. 302--309.
-    \item API Recommended Practice 684. API Standard Paragraphs Rotordynamic Tutorial: Lateral Critical Speeds, Unbalance Response, Stability, Train Torsionals, and Rotor Balancing. 4th ed. Washington: American Petroleum Institute, 2014. Reaffirmed 2022.
-    \item ГОСТ ИСО 1940-1-2007. Вибрация. Требования к качеству балансировки жёстких роторов. Часть 1. Определение допустимого остаточного дисбаланса. Москва: Стандартинформ, 2008.
-    \item Степанов А. И. Центробежные и осевые насосы. Москва: Машгиз, 1960.
-    \item Xiong G., Zhang J., Mao Z., Wang Z., Wang H., Lian S., Jiang Z. Dynamic misalignment effects on performance of dynamically loaded journal bearings // International Journal of Mechanical Sciences. 2024. Vol. 264. Article 108839.
-    \item Gu C., Meng X., Wang S., Ding X. Modeling a hydrodynamic bearing with provision for misalignments and textures // Journal of Tribology. 2020. Vol. 142. Article 041801.
-    \item Xie Z., Jiao J., Zhao B., Zhang J., Xu F. Theoretical and experimental research on the effect of bi-directional misalignment on the static and dynamic characteristics of a novel bearing // Mechanical Systems and Signal Processing. 2024. Vol. 208. Article 111041.
-    \item API Standard 610. Centrifugal Pumps for Petroleum, Petrochemical and Natural Gas Industries. 12th ed. Washington: American Petroleum Institute, 2021; ISO 13709:2009. Centrifugal pumps for petroleum, petrochemical and natural gas industries. Geneva: ISO, 2009.
-    \item ГОСТ Р ИСО 20816-3-2023. Вибрация. Измерение и оценка вибрации машин. Часть 3. Машины промышленного назначения номинальной мощностью более 15 кВт и номинальными скоростями от 120 об/мин до 30000 об/мин. Москва: Стандартинформ, 2023.
-\end{enumerate}
-
-\end{document}

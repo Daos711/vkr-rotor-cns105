@@ -1,0 +1,35 @@
+\documentclass[14pt,a4paper]{extarticle}
+
+% --- Преамбула (оформление по ГОСТ, как в kursovye_latex) ---
+\input{preamble}
+
+% --- Параметры титульного листа ---
+\input{config}
+
+\begin{document}
+
+% Титульный лист
+\input{titlepage}
+\setcounter{page}{2}
+
+% Содержание
+\renewcommand{\contentsname}{СОДЕРЖАНИЕ}
+\tableofcontents
+\newpage
+
+% Введение
+\input{sections/introduction}
+
+% Глава 1
+\input{sections/ch1}
+
+% Главы 2-3 (методология и результаты моделирования)
+\input{sections/chapters_2_3}
+
+% Заключение
+\input{sections/conclusion}
+
+% Список использованных источников
+\input{bibliography}
+
+\end{document}
