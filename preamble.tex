@@ -51,6 +51,25 @@
 \cftsetrmarg{0.7em}
 \setcounter{tocdepth}{2}
 
+% --- Содержание: номер раздела + фиксированный пробел, без выравнивания
+%     заголовков по левому краю (позиция названия зависит от ширины номера) ---
+\makeatletter
+\renewcommand{\numberline}[1]{#1\hspace{0.5em}}
+\newcommand{\gost@tocline}[3]{%
+  % #1 -- отступ слева, #2 -- запись (\numberline{..}Заголовок), #3 -- страница
+  \vskip \z@ \@plus.2\p@
+  {\leftskip #1\relax \rightskip \@tocrmarg \parfillskip -\rightskip
+   \parindent #1\relax \@afterindenttrue
+   \interlinepenalty\@M
+   \leavevmode \normalsize
+   #2\nobreak
+   \leaders\hbox{$\m@th\mkern\@dotsep mu\hbox{.}\mkern\@dotsep mu$}\hfill
+   \nobreak \hb@xt@\@pnumwidth{\hfil\normalcolor #3}\par}}
+\renewcommand*\l@section{\gost@tocline{0pt}}
+\renewcommand*\l@subsection{\gost@tocline{5mm}}
+\renewcommand*\l@subsubsection{\gost@tocline{10mm}}
+\makeatother
+
 \geometry{left=30mm,right=10mm,top=20mm,bottom=20mm}
 \onehalfspacing
 \setlength{\parindent}{1.25cm}
