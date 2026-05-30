@@ -121,3 +121,17 @@
 \numberwithin{table}{section}
 
 \hypersetup{colorlinks=true,linkcolor=black,filecolor=black,urlcolor=blue,citecolor=black}
+
+% --- Плейсхолдеры для ещё не отрисованных рисунков главы 1 ---
+\newcommand{\placeholdergraphic}[2]{%
+\fbox{%
+\begin{minipage}[c][0.27\textheight][c]{#1}
+\centering
+\small Рисунок будет добавлен после отрисовки\\[0.6em]
+\footnotesize #2
+\end{minipage}%
+}%
+}
+\newcommand{\maybeincludegraphics}[3]{%
+\IfFileExists{#1}{\includegraphics[width=#2]{#1}}{\placeholdergraphic{#2}{#3}}%
+}
