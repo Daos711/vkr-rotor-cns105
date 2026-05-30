@@ -55,12 +55,14 @@
 % --- Содержание: номер раздела + фиксированный пробел, без выравнивания
 %     заголовков по левому краю (позиция названия зависит от ширины номера) ---
 \makeatletter
+\renewcommand{\@pnumwidth}{1.55em}
+\renewcommand{\@tocrmarg}{2.55em}
 \renewcommand{\numberline}[1]{#1\hspace{0.5em}}
 \newcommand{\gost@tocline}[3]{%
   % #1 -- отступ слева, #2 -- запись (\numberline{..}Заголовок), #3 -- страница
   \vskip \z@ \@plus.2\p@
   {\leftskip #1\relax \rightskip \@tocrmarg \parfillskip -\rightskip
-   \parindent #1\relax \@afterindenttrue
+   \parindent \z@
    \interlinepenalty\@M
    \leavevmode \normalsize
    #2\nobreak
