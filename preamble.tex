@@ -8,6 +8,29 @@
 \usepackage[fleqn]{amsmath}
 \usepackage{amssymb,mathtools}
 \setlength{\mathindent}{1.25cm}
+
+% --- Пустая строка до и после каждой формулы ---
+\AtBeginDocument{%
+  \abovedisplayskip=1\baselineskip plus 0pt minus 8pt\relax
+  \abovedisplayshortskip=1\baselineskip plus 0pt minus 8pt\relax
+  \belowdisplayskip=1\baselineskip plus 0pt minus 8pt\relax
+  \belowdisplayshortskip=1\baselineskip plus 0pt minus 8pt\relax
+}
+
+% --- Блок «где» после формул (расшифровка переменных в столбик) ---
+% Использование:
+%   \begin{conditions}
+%   $a$ -- описание;\\
+%   $b$ -- описание.
+%   \end{conditions}
+\newlength{\wherewd}
+\AtBeginDocument{\settowidth{\wherewd}{где\enspace}}
+\newenvironment{conditions}{%
+  \par\noindent где\enspace\ignorespaces
+  \begin{minipage}[t]{\dimexpr\linewidth-\wherewd\relax}%
+}{%
+  \end{minipage}\par\noindent\ignorespaces
+}
 \usepackage{listings,xcolor}
 \usepackage{hyperref}
 \usepackage{caption,subcaption}
