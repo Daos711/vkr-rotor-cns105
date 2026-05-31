@@ -436,7 +436,7 @@ $\chi_y$ -- коэффициент распределения гидравлич
 \setlength{\LTpre}{\baselineskip}\setlength{\LTpost}{\baselineskip}%
 \setlength{\fulltblw}{\dimexpr\textwidth-8\tabcolsep-5\arrayrulewidth\relax}%
 \refstepcounter{table}\label{tab:input_params}%
-\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr0.40\fulltblw\relax}|>{\centering\arraybackslash}p{\dimexpr0.17\fulltblw\relax}|>{\centering\arraybackslash}p{\dimexpr0.17\fulltblw\relax}|>{\centering\arraybackslash}p{\dimexpr0.26\fulltblw\relax}|}
+\begin{longtable}{|>{\raggedright\arraybackslash}m{\dimexpr0.40\fulltblw\relax}|>{\centering\arraybackslash}m{\dimexpr0.17\fulltblw\relax}|>{\centering\arraybackslash}m{\dimexpr0.17\fulltblw\relax}|>{\centering\arraybackslash}m{\dimexpr0.26\fulltblw\relax}|}
 \multicolumn{4}{@{}l}{{\normalsize Таблица~\thetable{}~--~Исходные данные расчётной модели}}\\
 \hline
 \multicolumn{1}{|c|}{\bfseries Параметр} & \bfseries Обозначение & \bfseries Значение & \bfseries Единица измерения \\
@@ -549,15 +549,17 @@ $\chi_y$ -- коэффициент распределения гидравлич
 \centering
 \caption{Параметры эксплуатационных сценариев}
 \label{tab:scenario_params}
-{\small\setstretch{1.0}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X cccc >{\centering\arraybackslash}X}
-\toprule
-\multicolumn{1}{c}{\textbf{Сценарий}} & \textbf{Класс} & \textbf{$K_R$} & \textbf{$\chi_b$} & \textbf{$\chi_s$} & \textbf{Назначение} \\
-\midrule
+{\small\setstretch{1.0}\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|c|c|c|c|>{\raggedright\arraybackslash}X|}
+\hline
+\multicolumn{1}{c}{\textbf{\boldmath Сценарий}} & \textbf{\boldmath Класс} & \textbf{\boldmath $K_R$} & \textbf{\boldmath $\chi_b$} & \textbf{\boldmath $\chi_s$} & \textbf{\boldmath Назначение} \\
+\hline
 Новый ротор & G6,3 & $0{,}02$ & $1$ & $1$ & Номинальный режим с расчётной гидравлической силой \\
+\hline
 Допустимый износ & G6,3 & $0{,}04$ & $1{,}4$ & $1{,}5$ & Нерасчётный режим с увеличенными зазорами \\
+\hline
 Предельно допустимое состояние & G16 & $0{,}04$ & $1{,}5$ & $2$ & Проверка ротора при повышенной остаточной неуравновешенности \\
-\bottomrule
+\hline
 \end{tabularx}}
 \end{table}
 
@@ -689,15 +691,17 @@ $\chi_y$ -- коэффициент распределения гидравлич
 \centering
 \caption{Перекос шейки в подшипнике по эксплуатационным сценариям}
 \label{tab:misalignment_scenarios}
-{\small\setstretch{1.0}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X cc}
-\toprule
-\multicolumn{1}{c}{\textbf{Сценарий}} & \textbf{$\theta_{\max}$, мрад} & \textbf{$h_{min,edge}$, мкм} \\
-\midrule
+{\small\setstretch{1.0}\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|c|c|}
+\hline
+\multicolumn{1}{c}{\textbf{\boldmath Сценарий}} & \textbf{\boldmath $\theta_{\max}$, мрад} & \textbf{\boldmath $h_{min,edge}$, мкм} \\
+\hline
 G6,3, номинальный режим & 0{,}098 & 32{,}98 \\
+\hline
 G6,3, допустимый износ & 0{,}45 & 25{,}93 \\
+\hline
 G16, предельные зазоры & 0{,}84 & 18{,}14 \\
-\bottomrule
+\hline
 \end{tabularx}}
 \end{table}
 
@@ -759,15 +763,17 @@ G16, предельные зазоры & 0{,}84 & 18{,}14 \\
 \centering
 \caption{Оценка устойчивости по собственным значениям}
 \label{tab:stability_summary}
-{\small\setstretch{1.0}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X cccc >{\centering\arraybackslash}X}
-\toprule
-\multicolumn{1}{c}{\textbf{Сценарий}} & \textbf{$n_1$, об/мин} & \textbf{$\operatorname{Re}(s_1)$, c$^{-1}$} & \textbf{$\delta_1$} & \textbf{$\min\delta_{1..3}$} & \textbf{Вывод} \\
-\midrule
+{\small\setstretch{1.0}\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|c|c|c|c|>{\raggedright\arraybackslash}X|}
+\hline
+\multicolumn{1}{c}{\textbf{\boldmath Сценарий}} & \textbf{\boldmath $n_1$, об/мин} & \textbf{\boldmath $\operatorname{Re}(s_1)$, c$^{-1}$} & \textbf{\boldmath $\delta_1$} & \textbf{\boldmath $\min\delta_{1..3}$} & \textbf{\boldmath Вывод} \\
+\hline
 G6,3, номинальный режим & 3701{,}8 & -46{,}7 & 0{,}757 & 0{,}504 & устойчив, запас по декременту достаточный \\
+\hline
 G6,3, допустимый износ & 3197{,}3 & -34{,}01 & 0{,}638 & 0{,}138 & устойчив, запас по декременту близок к нижней границе \\
+\hline
 G16, предельные зазоры & 2900 & -19{,}35 & 0{,}4 & -0{,}053 & динамический запас потерян по третьей ветви \\
-\bottomrule
+\hline
 \end{tabularx}}
 \end{table}
 
@@ -795,15 +801,17 @@ $a$ -- большая полуось орбиты, м.
 \centering
 \caption{Сравнение эксплуатационных сценариев с нормативными критериями}
 \label{tab:normative_summary}
-{\small\setstretch{1.0}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X cccc >{\centering\arraybackslash}X}
-\toprule
-\multicolumn{1}{c}{\textbf{Сценарий}} & \textbf{Запас до $n_1$, \%} & \textbf{$a_{\text{оп}}$, мкм} & \textbf{$v_{\text{rms}}$, мм/с} & \textbf{Зона} & \textbf{Практический вывод} \\
-\midrule
+{\small\setstretch{1.0}\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|c|c|c|c|>{\raggedright\arraybackslash}X|}
+\hline
+\multicolumn{1}{c}{\textbf{\boldmath Сценарий}} & \textbf{\boldmath Запас до $n_1$, \%} & \textbf{\boldmath $a_{\text{оп}}$, мкм} & \textbf{\boldmath $v_{\text{rms}}$, мм/с} & \textbf{\boldmath Зона} & \textbf{\boldmath Практический вывод} \\
+\hline
 G6,3, номинальный режим & 25{,}5 & 2{,}14 & 0{,}47 & A & запас по критической скорости и вибрации достаточен \\
+\hline
 G6,3, допустимый износ & 8{,}4 & 26{,}32 & 5{,}75 & C & необходим контроль зазоров и вибрации, длительная работа нежелательна \\
+\hline
 G16, предельные зазоры & 1{,}7 & 64{,}05 & 13{,}99 & D & состояние близко к резонансу и требует вывода в ремонт \\
-\bottomrule
+\hline
 \end{tabularx}}
 \end{table}
 
