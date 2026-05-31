@@ -432,9 +432,12 @@ $\chi_y$ -- коэффициент распределения гидравлич
 
 Основные параметры расчётной модели приведены в таблице \ref{tab:input_params}. Данные по насосу соответствуют ЦНС 105-392 (5МС-10), а геометрия и масса колеса первой ступени приняты по чертежу ЦНС 90.00.00.012 [13,16].
 
-{\small\setstretch{1.0}\setlength{\tabcolsep}{4pt}
-\begin{longtable}{|>{\raggedright\arraybackslash}p{0.40\textwidth}|>{\centering\arraybackslash}p{0.10\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|}
-\caption{Исходные данные расчётной модели}\label{tab:input_params}\\
+{\small\setstretch{1.0}\setlength{\tabcolsep}{6pt}%
+\setlength{\LTpre}{\baselineskip}\setlength{\LTpost}{\baselineskip}%
+\setlength{\fulltblw}{\dimexpr\textwidth-8\tabcolsep-5\arrayrulewidth\relax}%
+\refstepcounter{table}\label{tab:input_params}%
+\begin{longtable}{|>{\raggedright\arraybackslash}p{\dimexpr0.40\fulltblw\relax}|>{\centering\arraybackslash}p{\dimexpr0.17\fulltblw\relax}|>{\centering\arraybackslash}p{\dimexpr0.23\fulltblw\relax}|>{\centering\arraybackslash}p{\dimexpr0.20\fulltblw\relax}|}
+\multicolumn{4}{@{}l}{Таблица~\thetable{}~--~Исходные данные расчётной модели}\\
 \hline
 \multicolumn{1}{|c|}{\bfseries Параметр} & \bfseries Обозначение & \bfseries Значение & \bfseries Единица измерения \\
 \hline
