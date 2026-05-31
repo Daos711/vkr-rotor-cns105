@@ -15,6 +15,8 @@
   \abovedisplayshortskip=1\baselineskip plus 0pt minus 8pt\relax
   \belowdisplayskip=1\baselineskip plus 0pt minus 8pt\relax
   \belowdisplayshortskip=1\baselineskip plus 0pt minus 8pt\relax
+  \setlength{\abovecaptionskip}{\baselineskip}%
+  \setlength{\belowcaptionskip}{0pt}%
 }
 
 % --- Блок «где» после формул (расшифровка переменных в столбик) ---
@@ -26,10 +28,11 @@
 \newlength{\wherewd}
 \AtBeginDocument{\settowidth{\wherewd}{где\enspace}}
 \newenvironment{conditions}{%
-  \par\noindent где\enspace\ignorespaces
-  \begin{minipage}[t]{\dimexpr\linewidth-\wherewd\relax}%
+  \par\noindent
+  \setlength{\hangindent}{\wherewd}\hangafter=1\relax
+  где\enspace\ignorespaces
 }{%
-  \end{minipage}\par\noindent\ignorespaces
+  \par
 }
 \usepackage{listings,xcolor}
 \usepackage{hyperref}

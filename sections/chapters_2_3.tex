@@ -21,13 +21,11 @@
 Ротор представляется продольной балочной системой, установленной в левой и правой радиальных гидродинамических опорах. Ось ротора принимается за координатную ось, начало отсчёта совмещается с центром левой опоры, а центр правой опоры расположен на расстоянии $l_s$. Рабочие колёса вводятся как сосредоточенные массы $m_i$, расположенные в узлах с координатами $x_i$. Расчётная схема показана на рисунке \ref{fig:rotor_scheme}.
 
 Координаты рабочих колёс задаются через координату начала пакета ступеней $x_0$, длину пакета $L_h$ и число ступеней $z_s$:
-\begin{equation}
-    l_p=\frac{L_h}{z_s},
-\end{equation}
-\begin{equation}
-    x_i=x_0+\left(i-\frac{1}{2}\right)l_p,\qquad i\in\{1,\ldots,z_s\}.
+\begin{gather}
+l_p=\frac{L_h}{z_s},\\[\baselineskip]
+x_i=x_0+\left(i-\frac{1}{2}\right)l_p,\qquad i\in\{1,\ldots,z_s\}.
     \label{eq:stage_coordinates_cns105}
-\end{equation}
+\end{gather}
 Пролёт между опорами определяется суммой расстояний от левой опоры до пакета ступеней, длины пакета ступеней и расстояния от конца пакета до правой опоры:
 \begin{equation}
     l_s=l_L+L_h+l_R.
@@ -121,12 +119,10 @@ $\varepsilon_x$ и $\varepsilon_y$ -- безразмерные смещения 
 что соответствует инженерному подходу к учёту разрыва смазочной плёнки в разгруженной области подшипника.
 
 После решения уравнения Рейнольдса размерные компоненты гидродинамической силы определяются интегрированием давления по поверхности вкладыша:
-\begin{equation}
-    F_x=S_f\int_{-1}^{1}\int_{0}^{2\pi}P(\varphi,Z)\cos\varphi\,d\varphi\,dZ,
-\end{equation}
-\begin{equation}
-    F_y=S_f\int_{-1}^{1}\int_{0}^{2\pi}P(\varphi,Z)\sin\varphi\,d\varphi\,dZ,
-\end{equation}
+\begin{gather}
+F_x=S_f\int_{-1}^{1}\int_{0}^{2\pi}P(\varphi,Z)\cos\varphi\,d\varphi\,dZ,\\[\baselineskip]
+F_y=S_f\int_{-1}^{1}\int_{0}^{2\pi}P(\varphi,Z)\sin\varphi\,d\varphi\,dZ,
+\end{gather}
 где масштаб силы равен
 \begin{equation}
     S_f=\frac{1}{2}\left(\frac{2\eta\Omega R^2}{c^2}\right)RL_b.
@@ -283,17 +279,15 @@ $z_s$ -- число ступеней.
     \label{eq:rotor_motion}
 \end{equation}
 Так как матрица опоры содержит перекрёстные компоненты, матрицы $\mathbf{K}$ и $\mathbf{C}$ в общем случае несимметричны. Собственная задача решается в комплексной форме через систему первого порядка
-\begin{equation}
-    \dot{\mathbf{z}}=\mathbf{A}\mathbf{z},\qquad
-    \mathbf{z}=\begin{bmatrix}\mathbf{q}\\\dot{\mathbf{q}}\end{bmatrix},
-\end{equation}
-\begin{equation}
-    \mathbf{A}=\begin{bmatrix}
+\begin{gather}
+\dot{\mathbf{z}}=\mathbf{A}\mathbf{z},\qquad
+    \mathbf{z}=\begin{bmatrix}\mathbf{q}\\\dot{\mathbf{q}}\end{bmatrix},\\[\baselineskip]
+\mathbf{A}=\begin{bmatrix}
     \mathbf{0}&\mathbf{I}\\
     -\mathbf{M}^{-1}\mathbf{K}&-\mathbf{M}^{-1}\mathbf{C}
     \end{bmatrix}.
     \label{eq:first_order_matrix}
-\end{equation}
+\end{gather}
 Собственные значения $s_j=\sigma_j+i\omega_j$ дают круговые частоты $\omega_j$, частоты вращения, соответствующие собственным формам, и знак затухания. Комплексные формы разделяются на ветви прямой и обратной прецессии ротора по фазовому соотношению поперечных перемещений $x$ и $y$.
 
 Вынужденная орбита при синхронном возбуждении определяется в частотной области:
@@ -595,20 +589,18 @@ $\chi_y$ -- коэффициент распределения гидравлич
 \end{figure}
 
 Для среднего расчётного положения $\varepsilon=0{,}347$ получены матрицы
-\begin{equation}
-    \mathbf{K}_{b}=10^6\begin{bmatrix}
+\begin{gather}
+\mathbf{K}_{b}=10^6\begin{bmatrix}
     55{,}54&54{,}60\\
     -73{,}62&22{,}53
     \end{bmatrix}\ \text{Н/м},
-    \label{eq:k_matrix_result}
-\end{equation}
-\begin{equation}
-    \mathbf{C}_{b}=10^3\begin{bmatrix}
+    \label{eq:k_matrix_result}\\[\baselineskip]
+\mathbf{C}_{b}=10^3\begin{bmatrix}
     146{,}24&-493{,}87\\
     -355{,}21&178{,}65
     \end{bmatrix}\ \text{Н}\cdot\text{с/м}.
     \label{eq:c_matrix_result}
-\end{equation}
+\end{gather}
 Для левой опоры из уравнения статического равновесия получен эксцентриситет $\varepsilon_1=0{,}360$, для правой -- $\varepsilon_2=0{,}334$. Соответственно средние прямые жёсткости левой и правой опор составляют $41{,}6$ и $36{,}6$ МН/м.
 
 \subsection{Расчёт критических скоростей}
