@@ -1,57 +1,35 @@
 % ======================================================================
-%  Приложения (обязательные): три чертежа -- общий вид, сборочный, подшипник.
-%  Буквы приложений по ГОСТ -- кириллица: А, Б, В (без «С»).
-%  Для готового файла рисунок вставляется автоматически; если файла ещё
-%  нет в папке figures/ -- показывается рамка-плейсхолдер.
+%  Приложения (обязательные): только заголовки, без рисунков.
+%  Чертежи вставляются отдельными листами; здесь — шапка приложения.
+%  Буквы приложений по ГОСТ — кириллица: А, Б, В.
 % ======================================================================
 
-% --- Приложение А: общий вид ---
+% --- Приложение А ---
 \newpage
 \phantomsection
 \addcontentsline{toc}{section}{Приложение А}
 \begin{center}
-{\normalsize\bfseries ПРИЛОЖЕНИЕ А}\\[2pt]
+{\normalsize\bfseries ПРИЛОЖЕНИЕ А}\\
 (обязательное)\\[\baselineskip]
-{\normalsize\bfseries Общий вид насоса ЦНС 105-392}
+{\normalsize\bfseries Центробежный насос ЦНС 105-392}
 \end{center}
 
-\vspace{\baselineskip}
-
-\begin{figure}[H]
-\centering
-\maybeincludegraphics{figures/fig_1_1_cns_general.png}{0.95\textwidth}{Общий вид насоса ЦНС 105-392}
-\end{figure}
-
-% --- Приложение Б: сборочный чертёж ---
+% --- Приложение Б ---
 \newpage
 \phantomsection
 \addcontentsline{toc}{section}{Приложение Б}
 \begin{center}
-{\normalsize\bfseries ПРИЛОЖЕНИЕ Б}\\[2pt]
+{\normalsize\bfseries ПРИЛОЖЕНИЕ Б}\\
 (обязательное)\\[\baselineskip]
 {\normalsize\bfseries Сборочный чертёж насоса ЦНС 105-392}
 \end{center}
 
-\vspace{\baselineskip}
-
-\begin{figure}[H]
-\centering
-\maybeincludegraphics{figures/appendix_assembly.png}{0.95\textwidth}{Сборочный чертёж насоса ЦНС 105-392}
-\end{figure}
-
-% --- Приложение В: подшипник ---
+% --- Приложение В ---
 \newpage
 \phantomsection
 \addcontentsline{toc}{section}{Приложение В}
 \begin{center}
-{\normalsize\bfseries ПРИЛОЖЕНИЕ В}\\[2pt]
+{\normalsize\bfseries ПРИЛОЖЕНИЕ В}\\
 (обязательное)\\[\baselineskip]
-{\normalsize\bfseries Опорный подшипник скольжения}
+{\normalsize\bfseries Подшипник опорный}
 \end{center}
-
-\vspace{\baselineskip}
-
-\begin{figure}[H]
-\centering
-\maybeincludegraphics{figures/appendix_bearing.png}{0.95\textwidth}{Опорный подшипник скольжения}
-\end{figure}
