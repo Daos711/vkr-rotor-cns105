@@ -151,7 +151,6 @@
 \lstset{style=pythonstyle}
 
 \numberwithin{equation}{section}
-\numberwithin{figure}{section}
 \setlength{\LTpre}{0pt}
 \setlength{\LTpost}{\baselineskip}
 \newlength{\fulltblw}% рабочая ширина для таблиц во всю ширину текста
@@ -173,10 +172,13 @@
 }
 
 % --- Рисунок с подписью по ГОСТ ---
-% #1 файл, #2 ширина, #3 расшифровка позиций (может быть пустой), #4 «Рисунок 1.N — Название»
+% #1 файл, #2 ширина, #3 расшифровка позиций (может быть пустой),
+% #4 название рисунка (без слова «Рисунок N»), #5 метка для \ref
+% Номер рисунка проставляется автоматически (сквозная нумерация).
 \newcommand{\gostfiglegend}{}
-\newcommand{\gostfigure}[4]{%
+\newcommand{\gostfigure}[5]{%
   \par\vspace{\baselineskip}%
+  \refstepcounter{figure}%
   \noindent\begin{minipage}{\linewidth}%
    \centering
    \maybeincludegraphics{#1}{#2}{#4}\par
@@ -184,7 +186,7 @@
    \ifx\gostfiglegend\empty\else
      \vspace{\baselineskip}{\fontsize{12}{14}\selectfont #3\par}%
    \fi
-   \vspace{\baselineskip}{\fontsize{14}{17}\selectfont #4\par}%
+   \vspace{\baselineskip}{\fontsize{14}{17}\selectfont Рисунок~\thefigure~--~#4\label{#5}\par}%
   \end{minipage}%
   \par\vspace{\baselineskip}%
 }
