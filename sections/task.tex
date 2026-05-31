@@ -1,116 +1,117 @@
 % ======================================================================
-%  ЗАДАНИЕ на выпускную квалификационную работу (2 страницы)
-%  Поля-бланки: \uline{...\hfill} — подчёркивание во всю ширину строки,
-%  текст переносится по словам, подпись-пояснение центрируется под полем.
-%  Перечень разделов: \uline{...} — подчёркивание только под текстом.
+%  ЗАДАНИЕ на ВКР (две страницы).
+%  Короткие поля — \underline{\makebox[..][l]{...}} (сплошная линия до края).
+%  Длинные поля (тема, руководитель) — \uline{...} с \parfillskip=0pt:
+%      текст переносится по словам, КАЖДАЯ строка (включая последнюю)
+%      подчёркнута во всю ширину.
+%  Перечень разделов — \uline{...} с обычным \parfillskip:
+%      подчёркивание идёт ровно под текстом, последняя строка не до края.
+%  Подписи-пояснения центрируются под своим полем.
 % ======================================================================
 
-% --- Рабочие длины для разметки полей ---
-\newlength{\tqA}\newlength{\tqB}\newlength{\tqC}\newlength{\tqD}
-\newlength{\tqE}\newlength{\tqF}
+\newlength{\tlab}\newlength{\tfld}\newlength{\tlabB}\newlength{\tfldB}
 
-\newpage
+% ------------------------- Страница 2 (1-я страница задания) -----------
+\thispagestyle{plain}
 \begingroup
-\setstretch{1.15}
+\singlespacing
+\centering
 
-% ------------------------- Страница 1 ---------------------------------
-\begin{center}
-Министерство науки и высшего образования Российской Федерации\\[2pt]
-Федеральное государственное автономное образовательное учреждение\\
-высшего образования\\[2pt]
-«Сибирский федеральный университет»\\[12pt]
-Институт нефти и газа\\[2pt]
-Кафедра технологических машин и оборудования нефтегазового комплекса
-\end{center}
+Министерство науки и высшего образования РФ\\
+Федеральное государственное автономное\\
+образовательное учреждение высшего образования\\
+\textbf{<<\varUniversity>>}\\[\baselineskip]
+\varInstitute\\[\baselineskip]
+<<\varDepartment>>
 
-\vspace{1.4cm}
+\vspace{2em}
 
-\noindent\hfill\begin{minipage}{7.6cm}
-\setstretch{1.1}
+\hfill
+\begin{minipage}{0.46\textwidth}
+\raggedright
 УТВЕРЖДАЮ\\
-Заведующий кафедрой\\[12pt]
-\underline{\hspace{2.4cm}}~~В.\,В.~Бухтояров\\[-2pt]
-\hspace*{0.5cm}{\footnotesize подпись}\\[10pt]
-«\underline{\hspace{0.8cm}}»~\underline{\hspace{2.4cm}}~20\underline{\hspace{0.6cm}}\,г.
+Заведующий кафедрой\\[0.6em]
+\underline{\makebox[2.8cm]{}}~~\varHead\\[0.2em]
+\hspace*{0.6cm}{\fontsize{10}{12}\selectfont подпись}\\[0.6em]
+<<\underline{\makebox[0.7cm]{}}>>~\underline{\makebox[2.4cm]{}}~20\underline{\makebox[0.6cm]{}}\,г.
 \end{minipage}
 
-\vspace{1.6cm}
+\vspace{3\baselineskip}
 
-\begin{center}
-\textbf{\large ЗАДАНИЕ}\\[4pt]
-\textbf{на выпускную квалификационную работу}
-\end{center}
+\textbf{ЗАДАНИЕ}\\[0.3em]
+\textbf{НА ВЫПУСКНУЮ КВАЛИФИКАЦИОННУЮ РАБОТУ}\\[0.3em]
+\textbf{в форме бакалаврской работы}
 
+\vfill
 \endgroup
+\clearpage
 
-% ------------------------- Страница 2 ---------------------------------
-\newpage
+% ------------------------- Страница 3 (2-я страница задания) -----------
+\thispagestyle{plain}
 \begingroup
-\setstretch{1.0}
+\singlespacing
+\setlength{\parindent}{0pt}
 
 % --- Студенту ---
-\settowidth{\tqA}{Студенту\quad}
-\noindent Студенту\quad\uline{Минаеву Павлу Анатольевичу\hfill}\par
-\noindent\hspace*{\tqA}\makebox[\dimexpr\linewidth-\tqA\relax][c]{\footnotesize фамилия, имя, отчество}\par
-\vspace{8pt}
+\settowidth{\tlab}{Студенту\hspace{1em}}
+Студенту\hspace{1em}\underline{\makebox[\dimexpr\linewidth-\tlab\relax][l]{\varStudentFull}}\\[-0.2em]
+\hspace*{\tlab}\makebox[\dimexpr\linewidth-\tlab\relax][c]{\fontsize{10}{12}\selectfont фамилия, имя, отчество}
 
+\vspace{0.7em}
 % --- Группа / Направление ---
-\settowidth{\tqA}{Группа\quad}
-\setlength{\tqB}{3.6cm}
-\settowidth{\tqC}{\quad Направление (специальность)\quad}
-\setlength{\tqD}{\dimexpr\linewidth-\tqA-\tqB-\tqC\relax}
-\noindent Группа\quad\underline{\makebox[\tqB][c]{ЗНБ21-02Б}}%
-\quad Направление (специальность)\quad\underline{\makebox[\tqD][c]{15.03.02}}\par
-\noindent\hspace*{\tqA}\makebox[\tqB][c]{\footnotesize номер}%
-\hspace*{\tqC}\makebox[\tqD][c]{\footnotesize код}\par
-\vspace{8pt}
+\settowidth{\tlab}{Группа\hspace{0.8em}}
+\setlength{\tfld}{3.4cm}
+\settowidth{\tlabB}{\hspace{1.4em}Направление (специальность)\hspace{0.8em}}
+\setlength{\tfldB}{\dimexpr\linewidth-\tlab-\tfld-\tlabB\relax}
+Группа\hspace{0.8em}\underline{\makebox[\tfld][c]{\varGroup}}%
+\hspace{1.4em}Направление (специальность)\hspace{0.8em}\underline{\makebox[\tfldB][c]{\varSpecCode}}\\[-0.2em]
+\hspace*{\tlab}\makebox[\tfld][c]{\fontsize{10}{12}\selectfont номер}%
+\hspace*{\tlabB}\makebox[\tfldB][c]{\fontsize{10}{12}\selectfont код}
 
+\vspace{0.7em}
 % --- Полное наименование направления ---
-\noindent\uline{Технологические машины и оборудование\hfill}\par
-\noindent\makebox[\linewidth][c]{\footnotesize полное наименование}\par
-\vspace{8pt}
+\underline{\makebox[\linewidth][l]{\varSpecName}}\\[-0.2em]
+\makebox[\linewidth][c]{\fontsize{10}{12}\selectfont полное наименование}
 
-% --- Тема ВКР ---
-\noindent Тема выпускной квалификационной работы (далее~--- ВКР):\par
-\noindent\uline{Обеспечение динамических характеристик ротора многоступенчатого центробежного насоса\hfill}\par
-\vspace{8pt}
+\vspace{0.8em}
+% --- Тема ВКР (перенос + подчёркивание во всю ширину каждой строки) ---
+Тема выпускной квалификационной работы (далее~--- ВКР):\\
+{\parfillskip=0pt\relax\uline{\varTheme}\par}
 
+\vspace{0.7em}
 % --- Приказ ---
-\noindent Утверждена приказом по университету\quad №~\underline{\hspace{1.6cm}}/с\ от~\underline{\hspace{3.2cm}}\par
-\vspace{8pt}
+Утверждена приказом по университету\hspace{1em}№~\underline{\makebox[1.3cm]{}}/с от~\underline{\makebox[2.8cm]{}}
 
+\vspace{0.8em}
 % --- Руководитель ВКР ---
-\noindent Руководитель ВКР:\par
-\noindent\uline{К.\,А.~Башмур~--- ст. преподаватель кафедры технологических машин и оборудования нефтегазового комплекса\hfill}\par
-\noindent\makebox[\linewidth][c]{\footnotesize инициалы, фамилия, должность, ученое звание и место работы}\par
-\vspace{10pt}
+Руководитель ВКР:\\
+{\parfillskip=0pt\relax\uline{\varSupervisor~--- ст.\,преподаватель кафедры технологических машин и оборудования нефтегазового комплекса}\par}
+\vspace{-0.2em}
+\makebox[\linewidth][c]{\fontsize{10}{12}\selectfont инициалы, фамилия, должность, ученое звание и место работы}
 
+\vspace{0.9em}
 % --- Перечень разделов (подчёркивание только под текстом) ---
-\noindent\uline{1.~Теоретико-аналитический обзор предметной области исследования, проводимого в рамках ВКР, включая:}\par
-\noindent\uline{--- описание конструкции и условий работы многоступенчатых центробежных насосов;}\par
-\noindent\uline{--- описание гидродинамических подшипников скольжения и щелевых уплотнений рабочих колёс;}\par
-\noindent\uline{--- анализ методов расчёта динамики роторов и постановку задачи исследования;}\par
-\noindent\uline{2.~Разработка методики и численной модели динамики ротора;}\par
-\noindent\uline{3.~Расчёт критических скоростей, орбит, перекоса шейки и анализ устойчивости ротора;}\par
-\noindent\uline{4.~Нормативная оценка вибрационного состояния и анализ полученных результатов;}\par
-\vspace{8pt}
-\noindent\uline{Заключение по работе.}\par
-\vspace{8pt}
-\noindent\uline{Перечень графического материала: расчётная схема ротора; графики результатов моделирования (критические скорости, орбиты, логарифмический декремент); презентация к ВКР.}\par
+\uline{1.~Теоретико-аналитический обзор предметной области исследования, проводимого в рамках ВКР, включая:}\\
+\uline{--- описание конструкции и условий работы многоступенчатых центробежных насосов;}\\
+\uline{--- описание гидродинамических подшипников скольжения и щелевых уплотнений рабочих колёс;}\\
+\uline{--- анализ методов расчёта динамики роторов и постановку задачи исследования;}\\
+\uline{2.~Разработка методики и численной модели динамики ротора;}\\
+\uline{3.~Расчёт критических скоростей, орбит, перекоса шейки и анализ устойчивости ротора;}\\
+\uline{4.~Нормативная оценка вибрационного состояния и анализ полученных результатов;}\\
+\uline{Заключение по работе.}\\
+\uline{Перечень графического материала: расчётная схема ротора; графики результатов моделирования (критические скорости, орбиты, логарифмический декремент); презентация к ВКР.}
 
-\vspace{1.3cm}
-
+\vspace{2.2em}
 % --- Подписи ---
-\settowidth{\tqE}{Руководитель ВКР\quad}
-\noindent Руководитель ВКР\quad\underline{\hspace{5cm}}\hfill К.\,А.~Башмур\par
-\noindent\hspace*{\tqE}\makebox[5cm][c]{\footnotesize подпись}\par
-\vspace{1.0cm}
+\noindent\begin{tabularx}{\textwidth}{@{}l c X >{\raggedleft\arraybackslash}p{3cm}@{}}
+Руководитель ВКР & \underline{\makebox[4.5cm]{}} & & \varSupervisor \\[-0.3em]
+ & {\fontsize{10}{12}\selectfont подпись} & & \\[1.4cm]
+Задание принял к исполнению & \underline{\makebox[4.5cm]{}} & & \varStudent \\[-0.3em]
+ & {\fontsize{10}{12}\selectfont подпись студента} & & \\
+\end{tabularx}
 
-\settowidth{\tqF}{Задание принял к исполнению\quad}
-\noindent Задание принял к исполнению\quad\underline{\hspace{5cm}}\hfill П.\,А.~Минаев\par
-\noindent\hspace*{\tqF}\makebox[5cm][c]{\footnotesize подпись студента}\par
-\vspace{1.4cm}
-
-\noindent\hfill «\underline{\hspace{0.8cm}}»~\underline{\hspace{3cm}}~2026~г.
+\vspace{1.6em}
+\hspace*{\fill}<<\underline{\makebox[0.9cm]{}}>>~\underline{\makebox[3cm]{}}~\varYear~г.
 
 \endgroup
+\clearpage
