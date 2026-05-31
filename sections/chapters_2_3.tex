@@ -432,18 +432,19 @@ $\chi_y$ -- коэффициент распределения гидравлич
 
 Основные параметры расчётной модели приведены в таблице \ref{tab:input_params}. Данные по насосу соответствуют ЦНС 105-392 (5МС-10), а геометрия и масса колеса первой ступени приняты по чертежу ЦНС 90.00.00.012 [13,16].
 
-{\small\setstretch{1.0}
-\begin{longtable}{|>{\raggedright\arraybackslash}p{0.42\textwidth}|>{\centering\arraybackslash}p{0.11\textwidth}|>{\centering\arraybackslash}p{0.22\textwidth}|>{\centering\arraybackslash}p{0.13\textwidth}|}
+{\small\setstretch{1.0}\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{0.40\textwidth}|>{\centering\arraybackslash}p{0.10\textwidth}|>{\centering\arraybackslash}p{0.18\textwidth}|>{\centering\arraybackslash}p{0.14\textwidth}|}
 \caption{Исходные данные расчётной модели}\label{tab:input_params}\\
 \hline
-\multicolumn{1}{|c|}{\bfseries Параметр} & \multicolumn{1}{c|}{\bfseries Обозначение} & \multicolumn{1}{c|}{\bfseries Значение} & \multicolumn{1}{c|}{\bfseries Единица измерения} \\
+\multicolumn{1}{|c|}{\bfseries Параметр} & \bfseries Обозначение & \bfseries Значение & \bfseries Единица измерения \\
 \hline
 \endfirsthead
+\multicolumn{4}{@{}l}{Окончание таблицы~\thetable}\\
 \hline
-\multicolumn{1}{|c|}{\bfseries Параметр} & \multicolumn{1}{c|}{\bfseries Обозначение} & \multicolumn{1}{c|}{\bfseries Значение} & \multicolumn{1}{c|}{\bfseries Единица измерения} \\
+\multicolumn{1}{|c|}{\bfseries Параметр} & \bfseries Обозначение & \bfseries Значение & \bfseries Единица измерения \\
 \hline
 \endhead
-Марка насоса & -- & ЦНС 105-392, 5МС-10 & -- \\
+Марка насоса & -- & ЦНС 105-392 & -- \\
 \hline
 Подача & $Q$ & $105$ & м$^3$/ч \\
 \hline
@@ -548,7 +549,7 @@ $\chi_y$ -- коэффициент распределения гидравлич
 \label{tab:scenario_params}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X cccc >{\centering\arraybackslash}X}
 \toprule
-\multicolumn{1}{c}{\textbf{Сценарий}} & \textbf{Класс} & \textbf{$K_R$} & \textbf{$\chi_b$} & \textbf{$\chi_s$} & \multicolumn{1}{c}{\textbf{Назначение}} \\
+\multicolumn{1}{c}{\textbf{Сценарий}} & \textbf{Класс} & \textbf{$K_R$} & \textbf{$\chi_b$} & \textbf{$\chi_s$} & \textbf{Назначение} \\
 \midrule
 Новый ротор & G6,3 & $0{,}020$ & $1{,}00$ & $1{,}00$ & Номинальный режим с расчётной гидравлической силой \\
 Допустимый износ & G6,3 & $0{,}040$ & $1{,}40$ & $1{,}50$ & Нерасчётный режим с увеличенными зазорами \\
@@ -758,7 +759,7 @@ G16, предельные зазоры & 0{,}840 & 18{,}14 \\
 \label{tab:stability_summary}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X cccc >{\centering\arraybackslash}X}
 \toprule
-\multicolumn{1}{c}{\textbf{Сценарий}} & \textbf{$n_1$, об/мин} & \textbf{$\operatorname{Re}(s_1)$, c$^{-1}$} & \textbf{$\delta_1$} & \textbf{$\min\delta_{1..3}$} & \multicolumn{1}{c}{\textbf{Вывод}} \\
+\multicolumn{1}{c}{\textbf{Сценарий}} & \textbf{$n_1$, об/мин} & \textbf{$\operatorname{Re}(s_1)$, c$^{-1}$} & \textbf{$\delta_1$} & \textbf{$\min\delta_{1..3}$} & \textbf{Вывод} \\
 \midrule
 G6,3, номинальный режим & 3701{,}8 & -46{,}70 & 0{,}757 & 0{,}504 & устойчив, запас по декременту достаточный \\
 G6,3, допустимый износ & 3197{,}3 & -34{,}01 & 0{,}638 & 0{,}138 & устойчив, запас по декременту близок к нижней границе \\
@@ -794,7 +795,7 @@ $a$ -- большая полуось орбиты, м.
 \label{tab:normative_summary}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X cccc >{\centering\arraybackslash}X}
 \toprule
-\multicolumn{1}{c}{\textbf{Сценарий}} & \textbf{Запас до $n_1$, \%} & \textbf{$a_{\text{оп}}$, мкм} & \textbf{$v_{\text{rms}}$, мм/с} & \textbf{Зона} & \multicolumn{1}{c}{\textbf{Практический вывод}} \\
+\multicolumn{1}{c}{\textbf{Сценарий}} & \textbf{Запас до $n_1$, \%} & \textbf{$a_{\text{оп}}$, мкм} & \textbf{$v_{\text{rms}}$, мм/с} & \textbf{Зона} & \textbf{Практический вывод} \\
 \midrule
 G6,3, номинальный режим & 25{,}5 & 2{,}14 & 0{,}47 & A & запас по критической скорости и вибрации достаточен \\
 G6,3, допустимый износ & 8{,}4 & 26{,}32 & 5{,}75 & C & необходим контроль зазоров и вибрации, длительная работа нежелательна \\
