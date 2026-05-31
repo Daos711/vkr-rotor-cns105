@@ -74,7 +74,7 @@
 \vspace{0.8em}
 % --- Тема ВКР (длинный текст: обычный \uline, перенос по словам) ---
 Тема выпускной квалификационной работы (далее~-- ВКР):\\
-\noindent\parbox{\linewidth}{\uline{\varTheme}}
+\noindent\parbox{\linewidth}{\uline{\varTheme\hfill}}
 
 \vspace{0.7em}
 % --- Приказ ---
@@ -83,8 +83,9 @@
 \vspace{0.8em}
 % --- Руководитель ВКР ---
 Руководитель ВКР:\\
-\noindent\parbox{\linewidth}{\uline{\varSupervisor~-- ст.\,преподаватель кафедры технологических машин и оборудования нефтегазового комплекса}}\\[-0.2em]
-\makebox[\linewidth][c]{\fontsize{10}{12}\selectfont инициалы, фамилия, должность, ученое звание и место работы}
+\noindent\parbox{\linewidth}{%
+\uline{\varSupervisor~-- ст.\,преподаватель кафедры технологических машин и оборудования нефтегазового комплекса\hfill}\\[-0.2em]
+\makebox[\linewidth][c]{\fontsize{10}{12}\selectfont инициалы, фамилия, должность, ученое звание и место работы}}
 
 \vspace{0.9em}
 % --- Перечень разделов (обычный \uline, перенос по словам) ---
