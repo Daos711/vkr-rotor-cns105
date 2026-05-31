@@ -51,7 +51,7 @@ from models.rotor import (
     first_critical_for_support,
 )
 
-FIG_DIR = ROOT / "figures"
+FIG_DIR = ROOT.parent / "figures"   # корневая папка figures/ репозитория (единый источник)
 DATA_DIR = ROOT / "data"
 VAL_DIR = ROOT / "validation"
 for path in (FIG_DIR, DATA_DIR, VAL_DIR):
