@@ -1,7 +1,0 @@
-bibliography.tex: ranges->hyphen=4, em->en=0
-sections/abstract.tex: ranges->hyphen=0, em->en=2
-sections/task.tex: ranges->hyphen=0, em->en=43
-sections/ch1.tex: ranges->hyphen=3, em->en=0
-sections/chapters_2_3.tex: ranges->hyphen=1, em->en=0
-sections/introduction.tex: ranges->hyphen=0, em->en=0
-sections/conclusion.tex: ranges->hyphen=0, em->en=0
