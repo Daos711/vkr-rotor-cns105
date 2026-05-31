@@ -79,12 +79,12 @@
 \renewcommand{\arraystretch}{1.18}
 
 % --- Заголовки нумерованных разделов: с отступом 1,25 см ---
-\titleformat{\section}{\clearpage\normalsize\bfseries}{\thesection}{0.5em}{}
-\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
-\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
-\titlespacing*{\section}{\parindent}{0pt}{\baselineskip}
-\titlespacing*{\subsection}{\parindent}{\baselineskip}{\baselineskip}
-\titlespacing*{\subsubsection}{\parindent}{\baselineskip}{\baselineskip}
+\titleformat{\section}{\clearpage\normalsize\bfseries}{\hspace*{\parindent}\thesection}{0.5em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\hspace*{\parindent}\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\hspace*{\parindent}\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{0pt}{\baselineskip}
+\titlespacing*{\subsection}{0pt}{\baselineskip}{\baselineskip}
+\titlespacing*{\subsubsection}{0pt}{\baselineskip}{\baselineskip}
 
 % --- Заголовки ненумерованных разделов: по центру, с новой страницы ---
 \titleformat{name=\section,numberless}{\clearpage\normalsize\bfseries\centering}{}{0em}{}
@@ -141,13 +141,14 @@
 \newcommand{\gostfiglegend}{}
 \newcommand{\gostfigure}[4]{%
   \par\vspace{\baselineskip}%
-  {\centering
+  \noindent\begin{minipage}{\linewidth}%
+   \centering
    \maybeincludegraphics{#1}{#2}{#4}\par
    \renewcommand{\gostfiglegend}{#3}%
    \ifx\gostfiglegend\empty\else
      \vspace{\baselineskip}{\fontsize{12}{14}\selectfont #3\par}%
    \fi
    \vspace{\baselineskip}{\fontsize{14}{17}\selectfont #4\par}%
-  }%
+  \end{minipage}%
   \par\vspace{\baselineskip}%
 }
