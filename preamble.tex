@@ -135,3 +135,19 @@
 \newcommand{\maybeincludegraphics}[3]{%
 \IfFileExists{#1}{\includegraphics[width=#2]{#1}}{\placeholdergraphic{#2}{#3}}%
 }
+
+% --- Рисунок с подписью по ГОСТ ---
+% #1 файл, #2 ширина, #3 расшифровка позиций (может быть пустой), #4 «Рисунок 1.N — Название»
+\newcommand{\gostfiglegend}{}
+\newcommand{\gostfigure}[4]{%
+  \par\vspace{\baselineskip}%
+  {\centering
+   \maybeincludegraphics{#1}{#2}{#4}\par
+   \renewcommand{\gostfiglegend}{#3}%
+   \ifx\gostfiglegend\empty\else
+     \vspace{\baselineskip}{\fontsize{12}{14}\selectfont #3\par}%
+   \fi
+   \vspace{\baselineskip}{\fontsize{14}{17}\selectfont #4\par}%
+  }%
+  \par\vspace{\baselineskip}%
+}
